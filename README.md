@@ -1,4 +1,4 @@
-# CONSTRUCTION OF A LOW COST MICROBIAL PLANT FUEL CELL
+# CONSTRUCTION OF A LOW COST PLANT-MICROBIAL FUEL CELL
 
 Final Graduation Work presented
 as a partial requirement for obtaining the title
