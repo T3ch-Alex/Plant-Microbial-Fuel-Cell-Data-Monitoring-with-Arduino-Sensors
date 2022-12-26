@@ -26,7 +26,6 @@ Adafruit_ADS1115 ads; /* Usar este para a versão 16-bit */
 - Iniciamos o dispositivo BME280 */
 Adafruit_BME280 bme; // I2C
 // SENSOR UV GYML8511
-36
 /* O código utilizado para este sensor pode ser encontrado no site Cap 
 Sistema, 
 criado pelo autor Cacpnrj (2021).
