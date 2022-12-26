@@ -39,9 +39,17 @@ GYML8511 para intensidade da radiação ultravioleta (UV), LDR para intensidade 
 luz solar, BME280 para umidade, temperatura e pressão do ar e um sensor de
 umidade do solo, conforme mostra a figura.
 
+![Screenshot_1](https://user-images.githubusercontent.com/108704114/209579089-26262f73-09c7-4467-9305-095fb1f0870d.png)
 
-Sensores e materiais utilizados para o sistema de Arduino.
-Fonte: Próprio autor, 2021.
+*Sensores e materiais utilizados para o sistema de Arduino.
+Fonte: Próprio autor, 2021.*
+
+Todos foram conectados à CCPM conforme o esquema a seguir:
+
+![Screenshot_2](https://user-images.githubusercontent.com/108704114/209579397-86649111-ab8f-42c4-94e3-67aae61facb8.png)
+
+*Esquema do circuito da CCPM com o Arduino e Sensores.
+Fonte: Próprio autor, 2021.*
 
 A definição do pino analógico do sensor LDR utilizado no código deve ser ajustado para
 o pino A3 para o Arduino UNO, conforme indica a figura 9. Para calcular a irradiância
@@ -73,9 +81,11 @@ agitação em 15%, mantendo a mistura aquecida à 150ºC.
 Em seguida, adicionou-se 20g de carvão ativado de 50% a 70% de
 granulometria menor que 325 mesh, agitando toda a mistura por 1 hora.
 
-O carvão ativado utilizado e a mistura de cola PVA, água destilada, suco de limão e
+![Screenshot_3](https://user-images.githubusercontent.com/108704114/209579093-5b425104-0663-4d5f-8f85-04339d318270.png)
+
+*O carvão ativado utilizado e a mistura de cola PVA, água destilada, suco de limão e
 carvão ativado.
-Fonte: Próprio autor, 2021.
+Fonte: Próprio autor, 2021.*
 
 Uma malha de aço inoxidável (mesh 100 e fio 0,10mm) foi recortada, com
 dimensões de 12 x 16cm ou seja, com aproximadamente 192cm² de área, com as
@@ -85,8 +95,10 @@ até utilizar toda a mistura disponível no béquer. O cátodo com a mistura foi
 secar na estufa à 140°C durante 2 horas, em seguida desligou-se a estufa para deixar
 a temperatura diminuir gradualmente até o dia seguinte.
 
-Cátodo após secagem, no dia seguinte.
-Fonte: Próprio autor, 2021.
+![Screenshot_4](https://user-images.githubusercontent.com/108704114/209579094-3642d322-4210-4279-8eb0-ddc5c911cfd8.png)
+
+*Cátodo após secagem, no dia seguinte.
+Fonte: Próprio autor, 2021.*
 
 Uma broca de 6mm foi utilizada para fazer vários furos e depois recortado uma
 seção de área de aproximadamente 6cm² com uma tesoura, a fim de criar uma
@@ -94,9 +106,11 @@ abertura para a passagem da folhagem da planta. Um pequeno furo foi feito no cen
 de cada um dos eletrodos para passar um fio de cobre, obtido de uma tomada de
 eletrônico comum, que foi soldado para obter o contato entre o eletrodo e o fio.
 
-Cátodo finalizado, com fio conectado e seções de área recortadas. O fio de tomada utilizado
+![Screenshot_5](https://user-images.githubusercontent.com/108704114/209579095-4f475101-9d34-499c-86fd-421907a5aecf.png)
+
+*Cátodo finalizado, com fio conectado e seções de área recortadas. O fio de tomada utilizado
 na conexão é mostrado.
-Fonte: Próprio autor, 2021
+Fonte: Próprio autor, 2021.*
 
 ### Construção do ânodo
 
@@ -108,8 +122,10 @@ seção de área de 6cm² com a tesoura. O furo foi feito no centro para a passa
 fio conector. O ânodo de malha de aço recortada foi finalizado contendo
 aproximadamente 106cm² de área.
 
-Ânodo finalizado.
-Fonte: Próprio autor, 2021.
+![Screenshot_6](https://user-images.githubusercontent.com/108704114/209579097-fc55c903-aa61-4d40-bfcb-4781400a28bf.png)
+
+*Ânodo finalizado.
+Fonte: Próprio autor, 2021.*
 
 ### Construção da CCPM
 
@@ -129,8 +145,10 @@ Os 2 recipientes escolhidos para a montagem das duas plantas foram potes de
 sorvete de 2 litros reciclados, comumente comercializados, com dimensões de área
 da base de 15,5 x 11cm, área da abertura de 18 x 13cm e 10,5cm de altura.
 
-Recipientes para a CCPM e a planta de controle, respectivamente.
-Fonte: Próprio autor, 2021.
+![Screenshot_7](https://user-images.githubusercontent.com/108704114/209579099-f1a4cc00-6f1b-4284-aa28-e93330b80330.png)
+
+*Recipientes para a CCPM e a planta de controle, respectivamente.
+Fonte: Próprio autor, 2021.*
 
 A CCPM foi montada colocando uma camada de terra de cerca de 25% da
 capacidade do recipiente. Em seguida foi incluído o ânodo, plantada as raízes da
@@ -140,8 +158,10 @@ folhas da planta pelas aberturas e fazendo contato com a terra, completando o
 recipiente com água até atingir a base do cátodo. Os eletrodos foram conectados pelo
 fio de tomada à um resistor de 100 ohms. O esquema todo segue o seguinte design:
 
-O design escolhido para a CCPM.
-Fonte: Próprio autor, 2021.
+![Screenshot_8](https://user-images.githubusercontent.com/108704114/209579101-7238aec9-677a-4562-b441-af91f00978f0.png)
+
+*O design escolhido para a CCPM.
+Fonte: Próprio autor, 2021.*
 
 A CCPM e a planta de controle foram montadas em ambiente doméstico de Foz
 do Iguaçu, Paraná, Brasil, onde grande parte da luz do Sol que atingiu a planta se
