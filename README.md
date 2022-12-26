@@ -1,310 +1,154 @@
+# CONSTRUCTION OF A LOW COST MICROBIAL PLANT FUEL CELL
 
-# CONSTRUÇÃO DE UMA CÉLULA COMBUSTÍVEL PLANTA MICROBIANA DE BAIXO CUSTO
-
-Trabalho Final de Graduação apresentado
-como requisito parcial para obtenção do título
-de licenciado em Física, curso de
-Licenciatura em Física, Instituto Federal do
+Final Graduation Work presented
+as a partial requirement for obtaining the title
+degree in Physics, course in
+Degree in Physics, Federal Institute of
 Paraná.
 
-Orientadora: Ms. Tunísia Eufrausino Schuler.
+Advisor: Ms. Tunisia Eufrausino Schuler.
 
-Para mais informações ou para visualizar o trabalho completo com a análise de dados e conclusão, envie um email para:
+For more information or to view the complete work with data analysis and conclusion, send an email to:
 tech.alexp@gmail.com
-## Resumo
 
-A demanda por energia vem crescendo no mundo ao mesmo tempo que as
-fontes de energia mais utilizadas, os combustíveis fósseis, vêm se tornando escassos.
-As fontes renováveis de energia, tais como, solar, eólica e biomassa mostram-se
-alternativas limpas, acessíveis e eficientes para a produção da mesma. Diversos
-países têm pesquisado uma nova tecnologia alternativa de produção de energia, a
-Célula de Combustível Planta-Microbiana (CCPM), que utiliza os processos naturais
-de uma planta para a produção de eletricidade, podendo ser a princípio, aplicadas em
-telhados verdes e campos de plantação de arroz, fornecendo benefícios além da
-produção de energia nestes setores, como a proteção do calor e produção de
-alimentos. Neste trabalho, foi construído um protótipo de CCPM utilizando materiais
-de baixo custo e uma planta de fácil acesso encontrada em solo brasileiro, a fim de
-verificar sua viabilidade, analisando a produção de energia da planta. Foi obtido uma
-densidade de corrente de 1,8 mW/m2. A resistência interna da CCPM foi de 1168,5 Ω.
-A diferença de potencial máxima de circuito aberto obtida foi de 384,8 mV. Espera-se
-que este estudo se torne uma base para estudos mais avançados sobre a CCPM.
-## Materiais e Métodos
+# Summary
 
-### Construção do sistema de coleta de dados
+The demand for energy has been growing in the world at the same time that the most used energy sources, 
+fossil fuels, have become scarce. Renewable energy sources, such as solar, wind and biomass, are clean, 
+accessible and efficient alternatives for energy production. Several countries have been researching a 
+new alternative energy production technology, the Plant-Microbial Fuel Cell (PMFC), which uses the natural 
+processes of a plant to produce electricity, and can be, in principle, applied to green roofs and fields of 
+rice plantation, providing benefits beyond energy production in these sectors, such as heat protection and 
+food production. In this work, a PMFC prototype was built using low cost materials and an easily accessible 
+plant found in Brazilian soil, in order to verify its viability, analyzing the plant's energy production. 
+A current density of 1.8 mW/m2 was obtained. The PMFC internal resistance was 1168.5 Ω. 
+The maximum open-circuit potential difference obtained was 384.8 mV. It is hoped that this study will become
+ a foundation for more advanced studies on PMFC.
 
-Para a coleta de dados da CCPM, foi utilizado o microcontrolador Arduino
-MEGA 2560, uma placa protoboard, alguns cabos ou fios para fazer as conexões e
-diversos sensores, como o ADS1115 para a coleta de dados de diferença de potencial,
-GYML8511 para intensidade da radiação ultravioleta (UV), LDR para intensidade da
-luz solar, BME280 para umidade, temperatura e pressão do ar e um sensor de
-umidade do solo, conforme mostra a figura.
+## Materials and methods
+
+### Construction of the data collection system
+
+For PMFC data collection, an Arduino MEGA 2560 microcontroller was used, a protoboard, some cables or wires 
+to make the connections and several sensors, such as the ADS1115 for potential difference data collection, 
+GYML8511 for radiation intensity ultraviolet (UV), LDR for sunlight intensity, BME280 for humidity, 
+temperature and air pressure, and a soil moisture sensor, as shown in the figure.
 
 ![Screenshot_1](https://user-images.githubusercontent.com/108704114/209579089-26262f73-09c7-4467-9305-095fb1f0870d.png)
 
-*Sensores e materiais utilizados para o sistema de Arduino.
-Fonte: Próprio autor, 2021.*
+*Sensors and materials used for the Arduino system.
+Source: Author himself, 2021.*
 
-Todos foram conectados à CCPM conforme o esquema a seguir:
+All were connected to the PMFC according to the following scheme:
 
 ![Screenshot_2](https://user-images.githubusercontent.com/108704114/209579397-86649111-ab8f-42c4-94e3-67aae61facb8.png)
 
-*Esquema do circuito da CCPM com o Arduino e Sensores.
-Fonte: Próprio autor, 2021.*
+*PMFC circuit diagram with Arduino and Sensors.
+Source: Author himself, 2021.*
 
-A definição do pino analógico do sensor LDR utilizado no código deve ser ajustado para
-o pino A3 para o Arduino UNO, conforme indica a figura 9. Para calcular a irradiância
-através do sensor LDR, o valor dado pelo sensor (em lux) através do código é
-multiplicado por um fator de conversão, obtido através dos autores Michael et al (2020)
-onde para cada 1 W/m² se tem aproximadamente 120 lux.
-Utilizando o programa PLX-DAQ para as planilhas do Excel (Parallax, c2021)
-em combinação com o circuito de Arduino e sensores, foi possível automatizar a coleta
-de dados. O código do programa construído fornece uma linha de dados de hora,
-tempo corrido em segundos, data, intensidade UV (mW/m²), voltagem (mV), corrente
-(calculada pela divisão da voltagem pela resistência externa dado em mA),
-luminosidade (lux), irradiância (W/m²), umidade do solo (%), temperatura do ar (ºC),
-pressão (Pa) e umidade do ar (%).
+The analog pin definition of the LDR sensor used in the code must be set to pin A3 for the Arduino UNO. 
+To calculate the irradiance through the LDR sensor, the value given by the sensor (in lux) through the code 
+is multiplied by a conversion factor, obtained through the authors Michael et al (2020) where for every 
+1 W/m² there is approximately 120 lux.
+Using the PLX-DAQ program for Excel spreadsheets (Parallax, c2021) in combination with the Arduino circuit 
+and sensors, it was possible to automate data collection. The constructed program code provides a line of 
+time data, elapsed time in seconds, date, UV intensity (mW/m²), voltage (mV), current (calculated by dividing 
+the voltage by the external resistance given in mA), luminosity ( lux), irradiance (W/m²), soil moisture (%), 
+air temperature (ºC), pressure (Pa) and air humidity (%).
 
-### Construção do cátodo
+### Construction of the cathode
 
-A CCPM foi composta dos seguintes componentes: planta, ânodo, cátodo, fios
-e resistor. O cátodo foi fabricado no laboratório de Física I do Instituto Federal do
-Paraná, Campus Foz do Iguaçu. Para sua fabricação seguiu-se o método proposto
-por Nulik e Endarko (2016) visando a obtenção deste componente eletrônico,
-determinante para a CCPM, com uma condutividade razoável e biocompatibilidade
-com a planta.
+The PMFC was composed of the following components: plant, anode, cathode, wires and resistor. The cathode 
+was manufactured in the Physics I laboratory of the Federal Institute of Paraná, Campus Foz do Iguaçu. 
+For its manufacture, the method proposed by Nulik and Endarko (2016) was followed in order to obtain this 
+electronic component, which is decisive for PMFC, with reasonable conductivity and biocompatibility with 
+the plant.
 
-Primeiramente foi preparado uma mistura de 100ml de cola PVA e 15ml de suco
-de limão, todos adicionados a um béquer de 2 litros. Aproximadamente 15ml de água
-destilada foi adicionada (apenas para facilitar a agitação) à cola PVA e o suco de limão,
-que foram agitados por 20 minutos no agitador magnético ligado na potência de
-agitação em 15%, mantendo a mistura aquecida à 150ºC.
-Em seguida, adicionou-se 20g de carvão ativado de 50% a 70% de
-granulometria menor que 325 mesh, agitando toda a mistura por 1 hora.
+First, a mixture of 100ml of PVA glue and 15ml of lemon juice was prepared, all added to a 2-liter beaker. 
+Approximately 15ml of distilled water was added (just to facilitate stirring) to the PVA glue and lemon 
+juice, which were stirred for 20 minutes on a magnetic stirrer turned on at 15% stirring power, keeping 
+the mixture heated at 150°C.
+Then, 20g of activated carbon of 50% to 70% of granulometry smaller than 325 mesh was added, stirring the 
+whole mixture for 1 hour.
 
 ![Screenshot_3](https://user-images.githubusercontent.com/108704114/209579093-5b425104-0663-4d5f-8f85-04339d318270.png)
 
-*O carvão ativado utilizado e a mistura de cola PVA, água destilada, suco de limão e
-carvão ativado.
-Fonte: Próprio autor, 2021.*
+*The activated carbon used and the mixture of PVA glue, distilled water, lemon juice and activated carbon.
+Source: Author himself, 2021.*
 
-Uma malha de aço inoxidável (mesh 100 e fio 0,10mm) foi recortada, com
-dimensões de 12 x 16cm ou seja, com aproximadamente 192cm² de área, com as
-pontas arredondadas para obter o formato do recipiente da planta.
-Seguidamente do preparo da mistura, ela foi aplicada sob a malha do cátodo,
-até utilizar toda a mistura disponível no béquer. O cátodo com a mistura foi posto para
-secar na estufa à 140°C durante 2 horas, em seguida desligou-se a estufa para deixar
-a temperatura diminuir gradualmente até o dia seguinte.
+A stainless steel mesh (mesh 100 and wire 0.10 mm) was cut, measuring 12 x 16 cm, that is, approximately 
+192 cm² in area, with rounded ends to obtain the shape of the plant container. After preparing the mixture, 
+it was applied under the cathode mesh, until all the mixture available in the beaker was used. The cathode 
+with the mixture was placed to dry in the oven at 140°C for 2 hours, then the oven was turned off to let the 
+temperature gradually decrease until the next day.
 
 ![Screenshot_4](https://user-images.githubusercontent.com/108704114/209579094-3642d322-4210-4279-8eb0-ddc5c911cfd8.png)
 
-*Cátodo após secagem, no dia seguinte.
-Fonte: Próprio autor, 2021.*
+*Cathode after drying, the next day.
+Source: Author himself, 2021.*
 
-Uma broca de 6mm foi utilizada para fazer vários furos e depois recortado uma
-seção de área de aproximadamente 6cm² com uma tesoura, a fim de criar uma
-abertura para a passagem da folhagem da planta. Um pequeno furo foi feito no centro
-de cada um dos eletrodos para passar um fio de cobre, obtido de uma tomada de
-eletrônico comum, que foi soldado para obter o contato entre o eletrodo e o fio.
+A 6mm drill was used to make several holes and then a section of approximately 6cm² was cut with scissors, 
+in order to create an opening for the passage of the plant's foliage. A small hole was made in the center 
+of each of the electrodes to pass a copper wire, obtained from a common electronic plug, which was soldered 
+to obtain contact between the electrode and the wire.
 
 ![Screenshot_5](https://user-images.githubusercontent.com/108704114/209579095-4f475101-9d34-499c-86fd-421907a5aecf.png)
 
-*Cátodo finalizado, com fio conectado e seções de área recortadas. O fio de tomada utilizado
-na conexão é mostrado.
-Fonte: Próprio autor, 2021.*
+*Finished cathode, with wire attached and area sections cut out. The plug wire used in the connection is shown.
+Source: Author himself, 2021.*
 
-### Construção do ânodo
+### Construction of the anode
 
-Uma malha menor (também com pontas arredondadas) foi recortada, contendo
-dimensões de 10 x 13cm com 130cm² de área aproximada. Foi utilizado o mesmo
-mesh de 100 do cátodo, de fio 10mm.
-A broca de 6mm foi utilizada para furar em vários pontos e depois recortar a
-seção de área de 6cm² com a tesoura. O furo foi feito no centro para a passagem do
-fio conector. O ânodo de malha de aço recortada foi finalizado contendo
-aproximadamente 106cm² de área.
+A smaller mesh (also with rounded ends) was cut, containing dimensions of 10 x 13cm with an approximate area 
+of 130cm². The same 100 mesh of the cathode was used, with 10mm wire. The 6mm drill bit was used to drill at 
+several points and then cut out the 6cm² area section with scissors. A hole was made in the center for the 
+passage of the connecting wire. The cut steel mesh anode was finished containing approximately 106cm² in area.
 
 ![Screenshot_6](https://user-images.githubusercontent.com/108704114/209579097-fc55c903-aa61-4d40-bfcb-4781400a28bf.png)
 
-*Ânodo finalizado.
-Fonte: Próprio autor, 2021.*
+*Finished anode.
+Source: Author himself, 2021.*
 
-### Construção da CCPM
+### Construction of the PMFC
 
-A planta escolhida é a Allium fistulosum, mais conhecida como cebolinha-verde,
-possui folhas finas e alongadas, cilíndricas e fistulosas que crescem entre 30 e 50 cm
-de altura, considerada de cultura perene, resistentes ao calor (MACHADO, 2021).
-Segundo os autores Santos et al (2020), sob condições favoráveis, a cebolinha pode
-obter uma biomassa fresca da raiz de 335,16 kg ha-1 em comparação com valores
-produzidos por Helder (2012) com a planta Arundinella anomala de aproximadamente
-144 kg ha-1.
+The plant chosen is Allium fistulosum, better known as chives-green, it has thin and elongated, cylindrical 
+and fistulous leaves that grow between 30 and 50 cm in height, considered a perennial crop, resistant to 
+heat (MACHADO, 2021).
 
-A cebolinha utilizada no experimento foi transplantada de um pequeno jardim
-doméstico, já em sua fase madura, onde utilizou a mesma terra presente na raiz de
-onde foi tirada.
+According to authors Santos et al (2020), under favorable conditions, chives can obtain a fresh root biomass 
+of 335.16 kg ha-1 compared to values produced by Helder (2012) with the Arundinella anomala plant of 
+approximately 144 kg ha-1.
 
-Os 2 recipientes escolhidos para a montagem das duas plantas foram potes de
-sorvete de 2 litros reciclados, comumente comercializados, com dimensões de área
-da base de 15,5 x 11cm, área da abertura de 18 x 13cm e 10,5cm de altura.
+The chives used in the experiment were transplanted from a small domestic garden, already in their mature 
+phase, where they used the same earth present in the root from which they were taken.
+
+The 2 containers chosen for assembling the two plants were 2-liter recycled ice cream pots, commonly sold, 
+with base area dimensions of 15.5 x 11 cm, opening area of 18 x 13 cm and height of 10.5 cm.
 
 ![Screenshot_7](https://user-images.githubusercontent.com/108704114/209579099-f1a4cc00-6f1b-4284-aa28-e93330b80330.png)
 
-*Recipientes para a CCPM e a planta de controle, respectivamente.
-Fonte: Próprio autor, 2021.*
+*Containers for PMFC and control plant, respectively.
+Source: Author himself, 2021.*
 
-A CCPM foi montada colocando uma camada de terra de cerca de 25% da
-capacidade do recipiente. Em seguida foi incluído o ânodo, plantada as raízes da
-cebolinha por dentro das aberturas do eletrodo e completado com terra até sobrar
-cerca de 10% do volume do recipiente. Por fim, o cátodo foi incluído, passando as
-folhas da planta pelas aberturas e fazendo contato com a terra, completando o
-recipiente com água até atingir a base do cátodo. Os eletrodos foram conectados pelo
-fio de tomada à um resistor de 100 ohms. O esquema todo segue o seguinte design:
+The PMFC was assembled by placing a layer of earth of about 25% of the capacity of the container. 
+Then the anode was included, the chive roots were planted inside the electrode openings and filled with 
+soil until about 10% of the container volume remained. Finally, the cathode was included, passing the 
+leaves of the plant through the openings and making contact with the earth, filling the container with 
+water until reaching the base of the cathode. The electrodes were connected by the plug wire to a 100 ohm 
+resistor. The whole scheme follows this design:
 
 ![Screenshot_8](https://user-images.githubusercontent.com/108704114/209579101-7238aec9-677a-4562-b441-af91f00978f0.png)
 
-*O design escolhido para a CCPM.
-Fonte: Próprio autor, 2021.*
+*Chosen design for the PMFC.
+Source: Author himself, 2021.*
 
-A CCPM e a planta de controle foram montadas em ambiente doméstico de Foz
-do Iguaçu, Paraná, Brasil, onde grande parte da luz do Sol que atingiu a planta se
-concentrou no período das 9h até 14h. As plantas foram transplantadas e montadas
-no dia 19 de novembro de 2021. Ambas foram regadas sempre no mesmo horário às
-19:00h, horário de Brasília, sempre que a umidade do solo atingisse 90% no sensor,
-adicionando água até quase encostar visivelmente no cátodo, ou no caso da planta
-sem o sistema, até o limite da superfície do solo.
+The PMFC and the control plant were set up in a domestic environment in Foz do Iguaçu, Paraná, Brazil, 
+where most of the sunlight that reached the plant was concentrated in the period from 9 am to 2 pm. The 
+plants were transplanted and mounted on November 19, 2021. Both were always watered at the same time at 
+7:00 pm, Brasília time, whenever the soil moisture reached 90% on the sensor, adding water until it almost 
+visibly touched the cathode , or in the case of the plant without the system, up to the limit of the soil 
+surface.
 
-Inicialmente, foi coletado uma série de dados de teste para verificar se a leitura
-do sistema do Arduino estava de acordo com valores de um multímetro. Finalmente,
-no dia 24 de novembro de 2021, 5 dias após o transplante da planta, foi coletado os
-dados da CCPM, de hora em hora, para serem analisados.
-## Referências
-
-AHN, J. H. et al. Phylogenetic Diversity of Dominant Bacterial and Archaeal
-Communities in Plant-Microbial Fuel Cells Using Rice Plant. 2014. 12f. Artigo. National
-Academy of Agricultural Science, Wanju, República da Coreia. Disponível em:
-<http://www.jmb.or.kr/journal/viewJournal.html?doi=10.4014/jmb.1408.08053>.
-Acesso em 16 mai. 2018.
-
-BORGES, Fernanda F. Uso de “wetland” construído no tratamento de efluente de
-ranicultura. 2014. 90f. Tese. Universidade Estadual Paulista (UNESP), Jaboticabal,
-Brasil. Disponível em: <http://www.athena.biblioteca.unesp.br/exlibris/bd/cathedra/10-
-12-2015/000855097.pdf>. Acesso em: 16 mai. 2018.
-
-CAMPOS, R. M. Sanny e SILVA, P. Vicente. A efetividade do estudo de impacto
-ambiental e do licenciamento em projetos de usinas hidrelétrica. Artigo. Instituto de
-Geografia, Uberlândia, Brasil. Caminhos de Geografia. Vol. 13, n. 41. 2010. Disponível
-em: <https://doaj.org/article/5ed0d668b86641c8848b891474b72aa6>. Acesso em: 23
-mai. 2018.
-
-CACPNRJ. Sensor UV ML8511 e Arduino para medidor de intensidade de raios UV.
-2021. Cap Sistema. Disponível em:
-<https://capsistema.com.br/index.php/2021/03/22/sensor-uv-ml8511-e-arduino-paramedidor-de-intensidade-de-raios-uv/>. Acesso em 20 de out. 2021.
-
-CARMALIN, A. Sophia; SREEJA, S. Green energy generation from plant microbial fuel
-cells (PMFC) using compost and a novel clay separator. Sustainable Energy
-Technologies and Assessments, India, 2017. Disponível em:
-<https://www.sciencedirect.com/science/article/abs/pii/S2213138817302564>.
-Acesso em: 5 mar. 2019.
-
-GADGET REBOOT. ADS1115 16 Bit ADC Module with Arduino. YouTube. 2019.
-Disponível em: <https://www.youtube.com/watch?v=zl7zJAq9nj8&t=474s>. Acesso
-em: 20 de out. 2021.
-
-GADGET REBOOT. Testing the ADS1115 16-bit I2C ADC with Arduino. GitHub. 2019.
-Disponível em: <https://github.com/GadgetReboot/ADS1115_Test>. Acesso em: 20 de
-out. 2021.
-
-HELDER, M. Design criteria for the Plant-Microbial Fuel Cell. 2012. 161f. Tese de
-PhD. Universidade de Wageningen, Wageningen, Holanda. Disponível em:
-<http://edepot.wur.nl/239054>. Acesso em: 11 mai. 2018.
-
-LAST MINUTE ENGINEERS. Interface BME280 Temperature, Humidity & Pressure
-Sensor with Arduino. c2021. Disponível em:
-<https://lastminuteengineers.com/bme280-arduino-tutorial/>. Acesso em 20 de out.
-2021.
-
-LEMS S., VAN DER KOOI H.J. e SWAAN ARONS J. The sustainability of resource
-utilization. Artigo. Universidade Tecnológica de Delft, Delft, Holanda. Green Chemistry,
-vol. 4. 2002. Disponível em: <http://pubs-rscorg.ez109.periodicos.capes.gov.br/en/content/articlepdf/2002/gc/b203490p>. Acesso
-em: 24 mai. 2018.
-
-LOGAN, Bruce E. et al. Microbial Fuel Cells: Methodology and Technology. 2006. 12f.
-Artigo. Universidade Penn State, Pensilvânia. Universidade de Wageningen,
-Wageningen, Holanda. Wetsus, Leeuwarden, Holanda. Universidade de Greifswald,
-Soldmannstrasse, Alemanha. Universidade de Queensland, St. Lucia, Austrália.
-Universidade de Ghent, Ghent, Bélgica.
-
-MACHADO, M. Santos. Aplicação de silicato de potássio em coentro e cebolinha
-sobre estresse salino da solução nutritiva. 2020. 76f. Tese. Universidade Federal do
-Ceará, Fortaleza, Brasil. Disponível em: < http://repositorio.ufc.br/handle/riufc/54549>.
-Acesso em: 15 de out. 2021.
-
-MYTECTUTOR. Using PLX-DAQ with Arduino. (Getting Started). c2021. Disponível
-em: <https://mytectutor.com/using-plx-dax-with-arduino-getting-started/>. Acesso em
-20 de out. 2021.
-
-NULIK, B. Willem; ENDARKO. Performance analysis of carbon electrode synthesized
-with poly (vinyl alcohol) and citric acid as cross-linking agent for desalination of NaCl
-solution in capacitive deionization. 2016. 5f. Artigo. Institut Teknologi Sepuluh
-Nopember, East Java, Indonesia. Disponível em: <
-https://www.researchgate.net/publication/312155166_Performance_analysis_of_carb
-on_electrode_synthesized_with_poly_vinyl_alcohol_and_citric_acid_as_crosslinking_agent_for_desalination_of_NaCl_solution_in_capacitive_deionization?_sg=c
-PDdYLMd3y7OjfOEcHkXGfo7UBKjTdVH_FPSeeR1gqp0GhxdjxyCZetNOpKjV2IDYv
-ZdxhSh2sXndTr174Pjfw>. Acesso em: 14 set. 2021.
-
-RJLOURA. Arduino moisture analog with nano. 2017. GITHUB. Disponível em: <
-https://github.com/rjloura/Arduino/commit/2ae6df769d0181e7d8fff3df8ae1d79f2efdf2
-0f >. Acesso em: 20 de out. 2021
-
-SANTOS, M. A. Lins et al. Desempenho agronômico e analise multivariada na
-produção da cebolinha verde em resposta a lâminas de irrigação e níveis de adubação
-sintética. 2020. 24f. Artigo. Universidade Federal de Alagoas, Brasil. Disponível em: <
-https://www.researchgate.net/publication/347801621_Desempenho_agronomico_e_a
-nalise_multivariada_na_producao_da_cebolinha_verde_em_resposta_a_laminas_de
-_irrigacao_e_niveis_de_adubacao_sintetica>. Acesso em: 15 de out. 2021.
-
-SARMA, J. Pranab; MOHANTY, Kaustubha. Epipremnum aureum and Dracaena
-braunii as indoor plants for enhanced electricity generation in a plant microbial fuel cell
-with electrochemical modified carbon fiber brush anode. 2018. 7f. Artigo. Instituto
-Indiano de Tecnologia de Guwahati, Guwahati, India. Disponível em:
-<https://www.sciencedirect.com/science/article/abs/pii/S1389172317309854>.
-Acesso em: 22 nov. 2021.
-
-SCIENCE DAILY. Figura 1 - CCPM. Disponível em:
-<https://www.sciencedaily.com/images/2012/11/121123092129_1_900x600.jpg>.
-Acesso em: 15 mai. 2018.
-
-STRIK, David P. B. T. B. et al. Green electricity production with living plants and
-bacteria in a fuel cell. 2008. 7f. Short Communication. Universidade de Wageningen,
-Wageningen, Holanda. Disponível em:
-<https://pt.scribd.com/document/373543609/Green-electricity-production-with-livingplants-and-bacteria-in-a-fuel-cell-pdf>. Acesso em: 15 mai. 2018.
-
-STRIK, David P. B. T. B. et al. Microbial solar cells: applying photosynthetic and
-electrochemically active organisms. 2010. 29f. Artigo. Universidade de Wageningen,
-Wageningen, Holanda. Disponível em:
-https://www.cell.com/trends/biotechnology/abstract/S0167-7799(10)00175-7. Acesso
-em: 15 mai. 2018.
-
-THOMAZ, Sidinei M. et al. Aquatic Macrophytes of Itaipu Reservoir, Brazil: Survey of
-Species and Ecological Consideration. 1998. 8f. Artigo. Universidade Estadual de
-Maringá, Maringá. Universidade Federal de Goiás, Goiânia, Brasil. Disponível em:
-<http://www.scielo.br/pdf/babt/v42n1/v42n1a03.pdf>. Acesso em: 16 mai. 2018.
-
-TIMMERS, Ruud A. et al. Long-term performance of a plant microbial fuel cell with
-Spartina anglica. 2010. 9f. Artigo. Universidade de Wageningen, Wageningen,
-Holanda. Disponível em: <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2841269/>.
-Acesso em: 15 mai. 2018.
-
-VAN SARK, G. J. H. M. Willfried. Teaching the relation between solar cell efficiency
-and annual energy yield. Artigo. Universidade Utrecht, Heidelberglaan, Holanda.
-European Journal of Physics. Vol. 28. 2007. Disponível em:
-<stacks.iop.org/EJP/28/415>. Acesso em: 23 mai. 2018.
-
-VIANA, C. Correia. Utilizando o Sensor de Luminosidade LDR no Arduino. Blog da
-Robótica. 2020. Disponível em: <
-https://www.blogdarobotica.com/2020/09/29/utilizando-o-sensor-de-luminosidade-ldrno-arduino/>. Acesso em: 20 de out. 2021
-
-YANG, Jin e CHEN, Ben. Emergy-based sustainability evaluation of wind power
-generation systems. Artigo. Universidade de Geociência da China, Pequim, China.
-Applied Energy, vol. 177. 2016. Disponível em: <https://ac.elscdn.com/S0306261916307310/1-s2.0-S0306261916307310-
-main.pdf?_tid=22c41785-a057-40a3-a7e0-
-3cfddaa07edb&acdnat=1527193006_1188ec31ab1c25745c42e3f1002c6b01>.
-Acesso em: 24 mai. 2018
+Initially, a series of test data was collected to verify if the reading of the Arduino system was in 
+accordance with the values of a multimeter. Finally, on November 24, 2021, 5 days after transplanting 
+the plant, hourly PMFC data were collected for analysis.
